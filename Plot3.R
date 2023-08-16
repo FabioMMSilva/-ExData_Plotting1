@@ -1,0 +1,10 @@
+
+source("LoadData.R")
+png(filename = "Plot3.png", width = 480, height = 480)
+plot(Sub_metering_1, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)", xaxt = "n")
+lines(Sub_metering_2, col = "red")
+lines(Sub_metering_3, col = "blue")
+legend("topright", col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lwd = 1)
+axis(side = 1, at = seq(1,2880, by = 1439), labels = c("Thu", "Fri", "Sat"))
+dev.off()
+rm(epc)
